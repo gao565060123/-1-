@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  图片一般处理
+//
+//  Created by mybook on 16/9/9.
+//  Copyright © 2016年 石塔Mr.GC. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIImage+Helper.h"
+
+
+
+
+#import "CropScaleImage.h"
+#import "Capture.h"
+#import "BorderW.h"
+#import "WaterImage.h"
+#import "CutImage.h"
+#import "ResizableImage.h"
+#import "MixImage.h"
+#import "FixOrientation.h"
+#import "BgColor.h"
+
+
+#define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
+
+
+#endif /* PrefixHeader_pch */
