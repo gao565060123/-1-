@@ -23,24 +23,18 @@
 
 - (void)initData
 {
-    NSString *s1 = @"CropScaleImage";
-    NSString *s2 = @"Capture";
-    NSString *s3 = @"BorderW";
-    NSString *s4 = @"WaterImage";
-    NSString *s5 = @"CutImage";
-    NSString *s6 = @"ResizableImage";
-    NSString *s7 = @"MixImage";
-    NSString *s8 = @"FixOrientation";
-    NSString *s9 = @"BgColor";
-    [self.dataArr addObject:s1];
-    [self.dataArr addObject:s2];
-    [self.dataArr addObject:s3];
-    [self.dataArr addObject:s4];
-    [self.dataArr addObject:s5];
-    [self.dataArr addObject:s6];
-    [self.dataArr addObject:s7];
-    [self.dataArr addObject:s8];
-    [self.dataArr addObject:s9];
+    NSArray *arr = @[
+                     @"CropScaleImage",   // 指定大小
+                     @"Capture",                    // 截屏
+                     @"BorderW",                   // 加边框
+                     @"WaterImage",           // 加水印
+                     @"CutImage",                // 调整方向
+                     @"ResizableImage",     // 拉伸
+                     @"MixImage",                 // 多张合成
+                     @"FixOrientation",         // 裁剪
+                     @"BgColor"                    // 底色
+                     ];
+    self.dataArr = [NSMutableArray arrayWithArray:arr];
 }
 
 - (void)createTableView
