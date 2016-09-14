@@ -23,15 +23,15 @@
 
 - (void)initData
 {
-    NSString *s1 = @"指定大小";
-    NSString *s2 = @"截屏";
-    NSString *s3 = @"加边框";
-    NSString *s4 = @"加水印";
-    NSString *s5 = @"调整方向";
-    NSString *s6 = @"拉伸";
-    NSString *s7 = @"多张合成";
-    NSString *s8 = @"裁剪";
-    NSString *s9 = @"底色";
+    NSString *s1 = @"CropScaleImage";
+    NSString *s2 = @"Capture";
+    NSString *s3 = @"BorderW";
+    NSString *s4 = @"WaterImage";
+    NSString *s5 = @"CutImage";
+    NSString *s6 = @"ResizableImage";
+    NSString *s7 = @"MixImage";
+    NSString *s8 = @"FixOrientation";
+    NSString *s9 = @"BgColor";
     [self.dataArr addObject:s1];
     [self.dataArr addObject:s2];
     [self.dataArr addObject:s3];
@@ -68,51 +68,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        CropScaleImage *crop = [[CropScaleImage alloc] init];
-        crop.title = self.dataArr[indexPath.row];
-        [self.navigationController pushViewController:crop animated:YES];
-    }
-    if (indexPath.row == 1) {
-        Capture *cap = [[Capture alloc] init];
-        cap.title = self.dataArr[indexPath.row];
-        [self.navigationController pushViewController:cap animated:YES];
-    }
-    if (indexPath.row == 2) {
-        BorderW *bord = [[BorderW alloc] init];
-        bord.title = self.dataArr[indexPath.row];
-        [self.navigationController pushViewController:bord animated:YES];
-    }
-    if (indexPath.row == 3) {
-        WaterImage *water = [[WaterImage alloc] init];
-        water.title = self.dataArr[indexPath.row];
-        [self.navigationController pushViewController:water animated:YES];
-    }
-    if (indexPath.row == 4) {
-        CutImage *cut = [[CutImage alloc] init];
-        cut.title = self.dataArr[indexPath.row];
-        [self.navigationController pushViewController:cut animated:YES];
-    }
-    if (indexPath.row == 5) {
-        ResizableImage *resize = [[ResizableImage alloc] init];
-        resize.title = self.dataArr[indexPath.row];
-        [self.navigationController pushViewController:resize animated:YES];
-    }
-    if (indexPath.row == 6) {
-        MixImage *mix = [[MixImage alloc] init];
-        mix.title = self.dataArr[indexPath.row];
-        [self.navigationController pushViewController:mix animated:YES];
-    }
-    if (indexPath.row == 7) {
-        FixOrientation *fix = [[FixOrientation alloc] init];
-        fix.title = self.dataArr[indexPath.row];
-        [self.navigationController pushViewController:fix animated:YES];
-    }
-    if (indexPath.row == 8) {
-        BgColor *bg = [[BgColor alloc] init];
-        bg.title = self.dataArr[indexPath.row];
-        [self.navigationController pushViewController:bg animated:YES];
-    }
+    Class targetClass = NSClassFromString(self.dataArr[indexPath.row]);
+    id target = [[targetClass alloc] init];
+    [self.navigationController pushViewController:target animated:YES];
 }
 
 
